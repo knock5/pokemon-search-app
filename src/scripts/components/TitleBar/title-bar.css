@@ -1,0 +1,18 @@
+.wrap-title {
+    background-color: var(--primary-bg-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrap-title > span {
+    color: var(--fourth-bg-color);
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: 0.3rem;
+}
+
+img {
+    width: 50px;
+}

@@ -1,0 +1,29 @@
+.search-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    border: 5px dashed var(--secondary-bg-color);
+    color: var(--secondary-bg-color);
+    text-shadow: 0px 0px 7px var(--primary-bg-color);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .search-result {
+        font-size: 15px;
+        padding: 7px;
+        border: 2px dashed var(--secondary-bg-color);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .search-result {
+        font-size: 12px;
+        padding: 5px;
+        border: 1px dashed var(--secondary-bg-color);
+    }
+}
