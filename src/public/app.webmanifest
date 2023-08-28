@@ -1,0 +1,36 @@
+{
+  "id": "pokemon-list-search-pwa-1",
+  "start_url": "./index.html",
+  "name": "Pokemon Search App",
+  "short_name": "Poke Search",
+  "description": "Free List Pokemon for you",
+  "display": "standalone",
+  "background_color": "#784fff",
+  "theme_color": "#f16000",
+  "icons": [
+    {
+      "src": "/icons/pokeball-64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/pokeball-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/pokeball-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/pokeball-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
