@@ -1,6 +1,6 @@
 import axios from 'axios';
 import './content-item.css';
-import BASE_API_ENDPOINT from '../../data/api-endpoint';
+import CONFIG from '../../data/api-endpoint';
 import '../../view/loadingView/loading-view';
 import '../../view/errorView/error-view';
 
@@ -14,7 +14,7 @@ class ContentItem extends HTMLElement {
   async getPokemonData(pokeName = '') {
     try {
       this.loading();
-      this.pokeData = await axios.get(`${BASE_API_ENDPOINT}${pokeName}`);
+      this.pokeData = await axios.get(`${CONFIG.BASE_API_ENDPOINT}${pokeName}`);
       if (Array.isArray(this.pokeData.data.results)) {
         this.pokeDataResults = this.pokeData.data.results;
       } else {
@@ -44,7 +44,6 @@ class ContentItem extends HTMLElement {
       this.contentElement.classList.remove('hide');
       this.pokedexElement.classList.add('hide');
     }
-    console.log(getInput);
   }
 
   renderError() {

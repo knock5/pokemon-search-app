@@ -14,6 +14,7 @@
     "rules": {
         "linebreak-style": "off",
         "eol-last": "off",
-        "no-else-return": "off"
+        "no-else-return": "off",
+        "import/no-extraneous-dependencies": "off"
     }
 }
