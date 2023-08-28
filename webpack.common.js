@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { CopyWebpackPlugin } = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
@@ -39,7 +39,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/resource/'),
+          from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
           globOptions: {
             ignore: ['**/images/**'],

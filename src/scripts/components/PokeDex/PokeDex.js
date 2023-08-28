@@ -1,4 +1,4 @@
-import pokeDexImg from '../../../resource/pokemon-go.png';
+import pokeDexImg from '../../../public/pokemon-go.png';
 import './poke-dex.css';
 
 class PokeDex extends HTMLElement {

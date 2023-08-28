@@ -1,5 +1,5 @@
 import './title-bar.css';
-import imgPokeball from '../../../resource/pokeball.png';
+import imgPokeball from '../../../public/pokeball.png';
 
 class TitleBar extends HTMLElement {
   connectedCallback() {
