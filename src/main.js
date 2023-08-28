@@ -1,3 +1,4 @@
+import 'regenerator-runtime';
 import './css/global.css';
 import './scripts/components/TitleBar/TitleBar';
 import './scripts/components/ContentItem/ContentItem';
