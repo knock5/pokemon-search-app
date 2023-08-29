@@ -3,21 +3,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/main.js'),
+  entry: {
+    app: path.resolve(__dirname, './src/main.js'),
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
+    clean: true,
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jgp|gif)/,
@@ -26,9 +27,7 @@ module.exports = {
     ],
   },
   optimization: {
-    minimizer: [
-      new CssMinimizerWebpackPlugin(),
-    ],
+    minimizer: [new CssMinimizerWebpackPlugin()],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -43,6 +42,23 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/'),
           globOptions: {
             ignore: ['**/images/**'],
+          },
+        },
+      ],
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+      skipWaiting: true,
+      clientsClaim: true,
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/pokeapi.co\/api\/v2\/pokemon/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'pokemon-list-v1',
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
           },
         },
       ],
