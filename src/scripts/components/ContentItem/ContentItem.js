@@ -1,5 +1,4 @@
 import axios from 'axios';
-import './content-item.css';
 import CONFIG from '../../data/api-endpoint';
 import '../../view/loadingView/loading-view';
 import '../../view/errorView/error-view';
@@ -33,7 +32,9 @@ class ContentItem extends HTMLElement {
 
   submitData(event) {
     event.preventDefault();
-    const getInput = document.querySelector('#searchPokemon').value.toLowerCase();
+    const getInput = document
+      .querySelector('#searchPokemon')
+      .value.toLowerCase();
     this.contentElement = document.querySelector('content-item');
     this.pokedexElement = document.querySelector('pokedex-bar');
     this.getPokemonData(getInput);
@@ -61,7 +62,9 @@ class ContentItem extends HTMLElement {
   render() {
     this.innerHTML = '';
 
-    document.querySelector('form').addEventListener('submit', this.submitData.bind(this));
+    document
+      .querySelector('form')
+      .addEventListener('submit', this.submitData.bind(this));
 
     this.pokeDataResults.forEach(async (pokemon) => {
       let getPokemonDetail;
@@ -76,13 +79,17 @@ class ContentItem extends HTMLElement {
       this.innerHTML += `
       <div class="wrap-data-pokemon">
         <div class="pokemon-image">
-          <img src="${getPokemonDetail.data.sprites.other.dream_world.front_default}" alt="pokemon-image">
+          <img src="${
+            getPokemonDetail.data.sprites.other.dream_world.front_default
+          }" alt="pokemon-image">
         </div>
         <div class="pokemon-details">
           <div class="pokemon-name">
             <h3>${getPokemonDetail.data.name.toUpperCase()}</h3>
           </div>
-          <span class="pokemon-id"> <abbr title="ID Pokemon">#${getPokemonDetail.data.id}</abbr></span>
+          <span class="pokemon-id"> <abbr title="ID Pokemon">#${
+            getPokemonDetail.data.id
+          }</abbr></span>
         </div>
       </div>
       `;
